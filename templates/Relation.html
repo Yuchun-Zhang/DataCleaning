@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/Relation.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+     <div class=DBT>
+       <p class=DBTable>The Database you have selected is <font color="red">{{request.session.DBName}}</font></p>
+       <p class=DBTable>DirtyTable is <font color="red">{{request.session.DirtyTable}}</font></p>
+       <p class=DBTable>CleanTable is <font color="red">{{request.session.CleanTable}}</font></p>
+       <p class=DBTable>RefTable is <font color="red">{{request.session.RefTable}}</font></p>
+     </div >
+     <form name="input" action="/ProcessPropVar/" method="get">  
+         <h3 class=TableName>Determine Funtional Dependency</h3>
+         <div class=LToR>
+         <ol class=left>
+            <p>FDL:</p>           
+            {% for DirtyTableAttr in request.session.DirtyTableAttr %}
+              <li>
+                {{DirtyTableAttr}}
+                <input type="checkbox" name="FDL" value="{{DirtyTableAttr}}" />
+              </li>
+            {% endfor %}
+         </ol>    
+         <ol class=right>
+           <p>FDR:</p>
+           {% for DirtyTableAttr in request.session.DirtyTableAttr %}
+             <li>                
+                {{DirtyTableAttr}}
+                <input type="checkbox" name="FDR" value="{{DirtyTableAttr}}" />
+           </li>
+           {% endfor %}
+         <ol>
+         </div>
+   
+         <h3 class=TableName>Determine Referential Integrity</h3>
+         <div class=LToR>
+           <ol class=left>
+              <p>Attributes in DirtyTable</p>
+              {% for DirtyTableAttr in request.session.DirtyTableAttr %}
+              <li>
+                {{DirtyTableAttr}}
+                <input type="checkbox" name="RIDirty" value="{{DirtyTableAttr}}" />
+              </li>
+             {% endfor %}
+           </ol>
+           <ol class=right>
+             <p>Attributes in RefTable</p>
+              {% for RefTableAttr in request.session.RefTableAttr %}
+ 	      <li>	
+                 {{RefTableAttr}}
+                 <input type="checkbox" name="RIRef" value="{{RefTableAttr}}" />
+              </li>
+           {% endfor %}
+          </ol>
+         </div>
+
+         <h3 class=TableName>Determine CleanData Refference</h3>
+         <div class=LToR>
+       	   <ol class=left>
+             <p>FDL:</p>
+             <p>Attributes in CleanTable</p>
+             {% for CleanTableAttr in request.session.CleanTableAttr %}
+                 <li>
+           	 {{CleanTableAttr}}
+           	 <input type="checkbox" name="FDLClean" value="{{CleanTableAttr}}" />
+                </li>
+             {% endfor %}
+ 	   </ol> 
+          <ol class=right>
+             <p>FDR:</p>
+             <p>Attributes in CleanTable</p>
+             {% for CleanTableAttr in request.session.CleanTableAttr %}
+		 <li>
+                 {{CleanTableAttr}}
+                 <input type="checkbox" name="FDRClean" value="{{CleanTableAttr}}" />
+		 </li>
+             {% endfor %} 
+          </ol>
+  	 </div>
+         </br>
+         <input type="submit" value="OK" />
+     </form> 
+  </body>   
+</html>

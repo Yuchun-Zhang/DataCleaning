@@ -1,0 +1,8 @@
+create table PVar(
+    id integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    pid integer NOT NULL,
+    pLeftid integer ,
+    pRightid integer ,
+    pInverseid integer
+);
+

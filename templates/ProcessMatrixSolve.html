@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+     <h1 style="color:blue">Building Matrix & Solving Optimization Problem Complete!</h1>
+     <form style="text-align:center" name="input" action="/ProcessShowProb/" method="get">  
+         <input type="submit" value="Next Step" />
+     </form>
+     <p class=TableName style="width:600px; margin:0 auto;text-align:left"> 
+     {% for item in request.session.InforContent %}
+          {{item}} <br>
+     {% endfor %}
+     </p>
+  </body>   
+</html>

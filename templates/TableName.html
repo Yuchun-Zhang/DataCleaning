@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/TableName.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+     <p class=DBName>The Database you have selected is <font color="red">{{request.session.DBName}}</font></p>
+     <form class=input name="input" action="/ShowTable/" method="get">
+       DirtyTable: 
+       <select class=TableList name="DirtyTable">
+         {% for Table in request.session.TableName %}
+	    <option value="{{Table}}">{{Table}}</option>
+         {% endfor %}
+       </select>
+       </br>
+       CleanTable: 
+       <select class=TableList name="CleanTable">
+         {% for Table in request.session.TableName %}
+	    <option value="{{Table}}">{{Table}}</option>
+         {% endfor %}
+       </select>
+       </br>
+       RefTable: 
+       <select class=TableList name="RefTable">
+         {% for Table in request.session.TableName %}
+	    <option value="{{Table}}">{{Table}}</option>
+         {% endfor %}
+       </select> 
+       </br>         
+       <input type="submit" value="OK" />
+     </form>
+  </body>   
+</html>

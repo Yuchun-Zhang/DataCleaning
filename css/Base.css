@@ -1,0 +1,39 @@
+h1{
+   font-family:arial, Helvetica, sans-serif;
+   color:green;
+   text-align:center;
+}
+
+h3
+  {
+  font-family: arial, sans-serif;
+}
+
+div.AHead{
+  width:600px;
+  height:100px;
+  text-align:center;
+  margin:0 auto;
+}
+div.AHead img{
+  float:left
+}
+div.AHead h1{
+  padding:40px 0 10px 0;
+}
+
+p.TableName{
+  text-align:center;
+  font-family:arial, Helvetica, sans-serif;
+}
+
+Table.Table{
+  text-align:center;
+  margin:0 auto; 
+  border: 1px solid blue;
+  border-collapse:collapse;
+}
+form.button{
+  text-align:center;
+  margin: 20px 0 0 0 ;
+}

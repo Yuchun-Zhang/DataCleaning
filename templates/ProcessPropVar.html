@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+     <h1 style="color:blue">Building Proportions and Variables complete!</h1>
+     <form style="text-align:center" name="input" action="/ProcessMatrixSolve/" method="get">  
+         <input type="submit" value="Next Step" />
+     </form>
+     <p class=TableName> Proportions </p>
+     <table border="1" class=Table>
+         <tr>
+             <th> pid </th>
+             <th> tid</th>
+             <th> TableName</th>
+             <th> Attribute </th>         
+         </tr>
+         {% for item in request.session.PPropContent %}
+         <tr>
+            {% for Attr in item %}
+            <td>{{Attr}}</td>
+            {% endfor %}
+         </tr>
+         {% endfor %}
+     </table>
+     <p class=TableName> Variables </p>
+     <table border="1" class=Table>
+         <tr>
+             <th> vid </th>
+             <th> pLeftid </th>
+             <th> pRightid</th>
+             <th> pMethod </th>
+             <th> pid </th>         
+         </tr>
+         {% for item in request.session.PVarContent %}
+         <tr>
+            {% for Attr in item %}
+            <td>{{Attr}} </td>
+            {% endfor %}
+         </tr>
+         {% endfor %}
+     </table>     
+  </body>   
+</html>

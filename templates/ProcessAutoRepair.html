@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+    <p style="color:red; text-align:center">Modified Tables</p> 
+    <p class=TableName >{{request.session.DirtyTable}}</p>
+    
+      <table class=Table border="1">
+         <tr>
+         {% for DirtyTableAttr in request.session.DirtyTableAttr %}
+           <th> {{DirtyTableAttr}}</th>        
+         {% endfor %}
+         </tr>
+         {% for Onerow in request.session.DirtyTableContentList %}
+           <tr>
+             {% for Oneattr in Onerow %}
+                  <td> {{Oneattr}} </td>
+             {% endfor %} 
+           </tr>
+         {% endfor %}  
+     </table>
+     <form class=button  name="input" action="/" method="get">  
+         <input type="submit" value="Back to Home" />
+     </form>
+  </body>   
+</html>

@@ -1,0 +1,42 @@
+
+div.DBT{
+  margin:20px auto;
+  overflow:hidden;
+  width: 400px;
+  border: 1px dashed;
+}
+
+div.DBT p.DBTable{
+   font-family:arial, Helvetica, sans-serif;
+   color:blue; 
+   padding:0 10px 0 10px;
+}
+
+
+form{
+  text-align:center;
+  margin: 20px 0 0 0 ;
+}
+
+h3.TableName{
+  color:blue;
+  text-align:center;
+}
+
+div.LToR
+{
+  margin:20px auto;
+  overflow:hidden;
+  width: 600px;  
+}
+
+div.LToR ol.left
+{
+  float:left;
+  text-align:left;
+}
+div.LToR ol.right
+{
+  float:right;
+  text-align:left;
+}

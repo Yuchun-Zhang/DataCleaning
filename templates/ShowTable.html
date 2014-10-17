@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Azalea DataCleaningSystem</title>
+    <link href="/css/ShowTable.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Base.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+     <div class=AHead>
+       <img src="/img/Azalea.jpg" width="100" height="100" >
+       <h1>Azalea DataCleaning System </h1>
+     </div>
+     <div class=DBT>
+       <p class=DBTable>The Database you have selected is <font color="red">{{request.session.DBName}}</font></p>
+       <p class=DBTable>DirtyTable is <font color="red">{{request.session.DirtyTable}}</font></p>
+       <p class=DBTable>CleanTable is <font color="red">{{request.session.CleanTable}}</font></p>
+       <p class=DBTable>RefTable is <font color="red">{{request.session.RefTable}}</font></p>
+     </div >
+     <p class=TableName>{{request.session.DirtyTable}}</p>
+     <table border="1" class=Table>
+         <tr>
+         {% for DirtyTableAttr in request.session.DirtyTableAttr %}
+           <th> {{DirtyTableAttr}}</th>        
+         {% endfor %}
+         </tr>
+         {% for Onerow in request.session.DirtyTableContent %}
+           <tr>
+             {% for Oneattr in Onerow %}
+              <td> {{Oneattr}}</td>
+             {% endfor %} 
+           </tr>
+         {% endfor %}  
+     </table>
+
+     <p class=TableName>{{request.session.CleanTable}}</p>
+     <table border="1" class=Table>
+         <tr>
+         {% for CleanTableAttr in request.session.CleanTableAttr %}
+           <th> {{CleanTableAttr}}</th>        
+         {% endfor %}
+         </tr>
+         {% for Onerow in request.session.CleanTableContent %}
+           <tr>
+             {% for Oneattr in Onerow %}
+              <td> {{Oneattr}}</td>
+             {% endfor %} 
+           </tr>
+         {% endfor %}  
+     </table>
+
+     <p class=TableName>{{request.session.RefTable}}</p>
+     <table border="1" class=Table>
+         <tr>
+         {% for RefTableAttr in request.session.RefTableAttr %}
+           <th> {{RefTableAttr}}</th>        
+         {% endfor %}
+         </tr>
+         {% for Onerow in request.session.RefTableContent %}
+           <tr>
+             {% for Oneattr in Onerow %}
+              <td> {{Oneattr}}</td>
+             {% endfor %} 
+           </tr>
+         {% endfor %}  
+     </table>
+     <form class=button name="input" action="/Relation/" method="get">
+       <input type="submit" value="OK" />
+     </form>
+  </body>   
+</html>

@@ -1,0 +1,15 @@
+
+
+div.DBT{
+  margin:20px auto;
+  overflow:hidden;
+  width: 400px;
+  border: 1px dashed;
+}
+
+div.DBT p.DBTable{
+   font-family:arial, Helvetica, sans-serif;
+   color:blue; 
+   padding:0 10px 0 10px;
+}
+

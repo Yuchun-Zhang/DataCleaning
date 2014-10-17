@@ -1,0 +1,6 @@
+create table PProp(
+    id integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tablename varchar(10) NOT NULL,
+    Attr varchar(10) NOT NULL
+);
+
